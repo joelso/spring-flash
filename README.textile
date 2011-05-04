@@ -31,7 +31,20 @@ You can also get the JAR from my GitHub repo. Add this repo to your pom.xml:
   <name>joelso github mvn repo</name>
   <url>https://github.com/joelso/joelso-mvn-repo/raw/master/snapshots/</url>
 </repository>
-</code></pre>
+</code>
+</pre>
+
+...and add the dependency:
+
+<pre><code>
+<dependency>
+  <artifactId>spring-flash</artifactId>
+  <groupId>org.joelso</groupId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+</code>
+</pre>
+
 
 h3. Spring configuration - wire it up!
 
