@@ -1,2 +1,23 @@
-Implementation of a "flash scope" in Spring MVC.
+h1. Flash scope for Spring MVC
+
+This is an implementation of the a "flash scope". The flash scope was introduced in rapid web frameworks such as
+Ruby on Rails, Grails, and Django. The whole purpose is to have an easy way to store objects/messages that
+will be available for rendering in the next rendered view. This means that objects in the flash scope "survives"
+a redirect-after-post.
+
+h2. Getting started, wire it up
+
+*Note: the flash scope has been tested in Spring 2.5 and Spring 3.*
+
+h3. Get the JAR
+
+h4. Build code and install in local maven repo 
+You can do this either by checking out the code from this repository and run
+$ mvn install
+
+This will install the artifact in your locale maven repository.
+
+h4. Get JAR from maven repo 
+
+You can also get the JAR from my GitHub repo.
 
