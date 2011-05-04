@@ -20,7 +20,7 @@ import org.springframework.context.MessageSourceResolvable;
 public final class Flash implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
     private static final String MAP_KEY_PREFIX = Flash.class.getName() + ".";
     private static final String SUCCESS_KEY = MAP_KEY_PREFIX  + "success";
     private static final String NOTICE_KEY = MAP_KEY_PREFIX  + "notice";
