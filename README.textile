@@ -22,13 +22,13 @@ h4. Get JAR from maven repo
 
 You can also get the JAR from my GitHub repo. Add this repo to your pom.xml:
 
-@
+<pre><code>
         <repository>
             <id>joelso-mvn-repo</id>
             <name>joelso github mvn repo</name>
             <url>https://github.com/joelso/joelso-mvn-repo/raw/master/snapshots/</url>
         </repository>
-@
+</code></pre>
 
 h3. Spring configuration - wire it up!
 
