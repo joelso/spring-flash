@@ -5,13 +5,14 @@ Ruby on Rails, Grails, and Django. The whole purpose is to have an easy way to s
 will be available for rendering in the next rendered view. This means that objects in the flash scope "survives"
 a redirect-after-post.
 
-h2. Getting started, wire it up
+h2. Getting started
 
 *Note: the flash scope has been tested in Spring 2.5 and Spring 3.*
 
 h3. Get the JAR
 
 h4. Build code and install in local maven repo 
+
 You can do this either by checking out the code from this repository and run
 $ mvn install
 
@@ -21,3 +22,9 @@ h4. Get JAR from maven repo
 
 You can also get the JAR from my GitHub repo.
 
+
+h3. Spring configuration - wire it up!
+
+In you dispatcher-servlet.xml (or whatever you call it):
+
+bc.
