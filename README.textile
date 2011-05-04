@@ -5,8 +5,8 @@ Ruby on Rails, Grails, and Django. The whole purpose is to have an easy way to s
 will be available for rendering in the next rendered view. This means that objects in the flash scope "survives"
 a redirect-after-post.
 
-*Note#1: spring-flash has been tested in Spring 2.5 and Spring 3.*
-*Note#2: this instructions is mostly for maven users.*
+*Note#1: Spring-flash has been tested in Spring 2.5 and Spring 3.*
+*Note#2: Instructions below are mostly for maven users.*
 
 
 h2. Getting started
@@ -26,11 +26,13 @@ h4. Get JAR from maven repo
 You can also get the JAR from my GitHub repo. Add this repo to your pom.xml:
 
 <code>
+<pre>
 <repository>
   <id>joelso-mvn-repo</id>
   <name>joelso github mvn repo</name>
   <url>https://github.com/joelso/joelso-mvn-repo/raw/master/snapshots/</url>
 </repository>
+</pre>
 </code>
 
 h3. Spring configuration - wire it up!
