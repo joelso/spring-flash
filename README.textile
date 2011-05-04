@@ -14,7 +14,7 @@ h3. Get the JAR
 h4. Build code and install in local maven repo 
 
 You can do this either by checking out the code from this repository and run
-$ mvn install
+@$ mvn install@
 
 This will install the artifact in your locale maven repository.
 
