@@ -15,8 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
  */
 public class FlashUtil {
 
-	public static final String DEFAULT_SESSION_ATTR = Flash.class.getName();
-	public static final String DEFAULT_REQ_ATTR = "flash";
+	public static final String SESSION_ATTR = Flash.class.getName();
+	public static final String REQUEST_ATTR = "flash";
 	
     /**
      * Creates a new Flash object for the given session.
@@ -26,7 +26,7 @@ public class FlashUtil {
      */
 	public static void initFlash(HttpSession session) {
 		Flash flash = new Flash();
-		session.setAttribute(DEFAULT_SESSION_ATTR, flash);
+		session.setAttribute(SESSION_ATTR, flash);
 	}
 
     /**
@@ -56,9 +56,7 @@ public class FlashUtil {
      * @param request
      */
 	public static void addToModel(HttpSession session, ModelAndView mav) {
-		// request.setAttribute(reqAttributeName,
-		// getFlashSafe(request.getSession()));
-		mav.addObject(DEFAULT_REQ_ATTR, getFlashClone(session));
+		mav.addObject(REQUEST_ATTR, getFlashClone(session));
 	}
 	
     /**
@@ -94,7 +92,7 @@ public class FlashUtil {
      * @return
      */
 	public static Flash getFlash(HttpSession session) {
-		Object object = session.getAttribute(DEFAULT_SESSION_ATTR);
+		Object object = session.getAttribute(SESSION_ATTR);
 		return object == null ? null : (Flash) object;
 	}
 

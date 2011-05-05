@@ -13,13 +13,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  */
 public class FlashInterceptor extends HandlerInterceptorAdapter {
 
-//    private FlashService flashService = new FlashServiceImpl();
-
-//    public void setFlashService(FlashService flashService) {
-//        this.flashService = flashService;
-//    }
-
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         HttpSession session = request.getSession();

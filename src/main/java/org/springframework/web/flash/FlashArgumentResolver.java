@@ -12,14 +12,6 @@ import org.springframework.web.context.request.NativeWebRequest;
  */
 public class FlashArgumentResolver implements WebArgumentResolver {
 
-//    private FlashService flashService = new FlashServiceImpl();
-
-
-//    public void setFlashService(FlashService flashService) {
-//        this.flashService = flashService;
-//    }
-
-
     @Override
     public Object resolveArgument(MethodParameter methodParameter,
             NativeWebRequest webRequest) throws Exception {
