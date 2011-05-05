@@ -13,24 +13,24 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  */
 public class FlashInterceptor extends HandlerInterceptorAdapter {
 
-    private FlashService flashService = new FlashServiceImpl();
+//    private FlashService flashService = new FlashServiceImpl();
 
-    public void setFlashService(FlashService flashService) {
-        this.flashService = flashService;
-    }
+//    public void setFlashService(FlashService flashService) {
+//        this.flashService = flashService;
+//    }
 
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         HttpSession session = request.getSession();
 
-        if(!flashService.isInitiated(session)) {
+        if(!FlashUtil.isInitiated(session)) {
             // Initiate flash if one doesn't exist in current session
-            flashService.initFlash(session);
+            FlashUtil.initFlash(session);
         }
 
         // Change state SAVED -> PREVIOUS
-        flashService.setSavedToPrevious(session);
+        FlashUtil.setSavedToPrevious(session);
         return true;
     }
 
@@ -48,14 +48,14 @@ public class FlashInterceptor extends HandlerInterceptorAdapter {
         	 * Hence the state moves from CURRENT -> SAVED
         	 */
         	
-            flashService.setCurrentToSaved(request.getSession());
+        	FlashUtil.setCurrentToSaved(request.getSession());
         } else if(mav != null) {
         	
         	/*
         	 * No redirect, just render the view and the 
         	 * flash object as an attribute. 
         	 */
-            flashService.addToModel(request.getSession(), mav);
+        	FlashUtil.addToModel(request.getSession(), mav);
         }
     }
 
@@ -67,7 +67,7 @@ public class FlashInterceptor extends HandlerInterceptorAdapter {
             Exception exception) {
 
         // Clean up flash entries with state != SAVED
-        flashService.removeNonSaved(request.getSession());
+    	FlashUtil.removeNonSaved(request.getSession());
     }
     
     private boolean isRedirect(ModelAndView mav) {

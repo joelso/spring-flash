@@ -12,12 +12,12 @@ import org.springframework.web.context.request.NativeWebRequest;
  */
 public class FlashArgumentResolver implements WebArgumentResolver {
 
-    private FlashService flashService = new FlashServiceImpl();
+//    private FlashService flashService = new FlashServiceImpl();
 
 
-    public void setFlashService(FlashService flashService) {
-        this.flashService = flashService;
-    }
+//    public void setFlashService(FlashService flashService) {
+//        this.flashService = flashService;
+//    }
 
 
     @Override
@@ -34,7 +34,7 @@ public class FlashArgumentResolver implements WebArgumentResolver {
         }
 
         HttpServletRequest request = (HttpServletRequest) nativeReq;
-        Flash flash = flashService.getFlash(request.getSession());
+        Flash flash = FlashUtil.getFlash(request.getSession());
 
         return flash == null ? UNRESOLVED : flash;
     }
